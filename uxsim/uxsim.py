@@ -1600,7 +1600,7 @@ class Analyzer:
             else:
                 plt.close("all")
     
-    @catch_exceptions_and_warn()
+    # @catch_exceptions_and_warn()
     def network_pillow(s, t=None, detailed=1, minwidth=0.5, maxwidth=12, left_handed=1, tmp_anim=0, figsize=6, network_font_size=20, node_size=2, basemap=None, image_return=0):
         """
         Visualizes the entire transportation network and its current traffic conditions. Faster implementation using Pillow.
@@ -1730,8 +1730,8 @@ class Analyzer:
                 avev = 0
             
             print(f"{s.W.TIME:>8.0f} s| {sum_vehs:>8.0f} vehs|  {avev:>4.1f} m/s| {time.time()-s.W.sim_start_time:8.2f} s", flush=True)
-        
-    @catch_exceptions_and_warn()
+
+    # @catch_exceptions_and_warn()
     def network_anim(s, animation_speed_inverse=10, detailed=0, minwidth=0.5, maxwidth=12, left_handed=1, figsize=(6,6), node_size=2, network_font_size=20, timestep_skip=24, basemap=None):
         """
         Generates an animation of the entire transportation network and its traffic states over time.
