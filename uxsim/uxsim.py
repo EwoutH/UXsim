@@ -1702,8 +1702,13 @@ class Analyzer:
             bounds_ctx = [minx, miny, maxx, maxy]
             # Fetch the basemap
             basemap_img, basemap_extent = ctx.bounds2img(*bounds_ctx, zoom='auto', source=basemap)
+
+            # Convert basemap_img (numpy array) to PIL Image and ensure both images are in "RGBA" mode
+            basemap_img_pil = Image.fromarray(basemap_img).convert("RGBA")
+            img = img.convert("RGBA")
+
             # Overlay the network visualization on the basemap
-            img = Image.alpha_composite(Image.fromarray(basemap_img), img)
+            img = Image.alpha_composite(basemap_img_pil, img)
 
         img = img.resize((int((maxx-minx)/scale), int((maxy-miny)/scale)), resample=Resampling.LANCZOS)    
         if image_return:
