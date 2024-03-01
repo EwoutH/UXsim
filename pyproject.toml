@@ -34,7 +34,8 @@ dynamic = ["version"] # Version is read from uxsim/__init__.py
 "Bug Tracker" = "https://github.com/toruseo/UXsim/issues"
 
 [tool.setuptools]
-packages = {find = {}}
+packages = ["uxsim"]
+package_data = {"uxsim": ["utils/Inconsolata.otf"]}
 
 [tool.setuptools.dynamic]
 version = {attr = "uxsim.__version__"}
