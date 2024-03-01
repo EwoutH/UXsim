@@ -33,9 +33,11 @@ dynamic = ["version"] # Version is read from uxsim/__init__.py
 "Homepage" = "https://github.com/toruseo/UXsim"
 "Bug Tracker" = "https://github.com/toruseo/UXsim/issues"
 
-[tool.setuptools]
-packages = ["uxsim"]
-package_data = {"uxsim": ["utils/Inconsolata.otf"]}
+[tool.setuptools.packages.find]
+where = ["."]  # Adjusted to the current layout since you are not using the 'src' directory.
+
+[tool.setuptools.package-data]
+uxsim = ["utils/*"]  # Assuming all .otf files in the utils directory should be included.
 
 [tool.setuptools.dynamic]
 version = {attr = "uxsim.__version__"}
