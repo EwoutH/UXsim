@@ -20,5 +20,5 @@ jobs:
       run: pip install .
     - name: Install pytest
       run: pip install pytest
-    - name: Run pytest on Python demos
-      run: pytest demos_and_examples/
+    - name: Run examples with pytest
+      run: pytest demos_and_examples/test_examples.py
