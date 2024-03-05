@@ -8,7 +8,7 @@ on:
     - cron: '0 6 * * 1'
 
 jobs:
-  run-demos:
+  run-examples:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -22,4 +22,4 @@ jobs:
     - name: Install pytest other dependencies
       run: pip install pytest setuptools gymnasium torch
     - name: Run examples with pytest
-      run: pytest demos_and_examples/test_examples.py
+      run: pytest demos_and_examples/test_examples.py --durations=0
